@@ -50,6 +50,22 @@ export default function InfiniteScroll() {
 
 	const inpRef = useRef();
 
+	useEffect(() => {
+		window.addEventListener("scroll", infiniteCheck);
+		return () => {
+			window.removeEventListener("scroll", infiniteCheck);
+		};
+	}, []);
+
+	const infiniteCheck = () => {
+		const { scrollTop, scrollHeight, clientHeight } =
+			document.documentElement;
+
+		if (scrollHeight - scrollTop === clientHeight) {
+			setPageIndex((pageIndex) => pageIndex + 1);
+		}
+	};
+
 	return (
 		<div className='container'>
 			<form onSubmit={handleSearch}>
