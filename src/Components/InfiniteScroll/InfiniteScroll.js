@@ -37,6 +37,35 @@ export default function InfiniteScroll() {
 			});
 	};
 
+	const searchFetchData = () => {
+		fetch(
+			`https://api.unsplash.com/search/photos?page=${pageIndex}&per_page=30&query=${searchState}&client_id=1uDochQiLEIUmXb38RxZfLz-GdvUleYSxAAp5M7vcAE`,
+		)
+			.then((response) => {
+				return response.json();
+			})
+			.then((data) => {
+				const imagsRreceived = [];
+				data.results.forEach((img) => {
+					imagsRreceived.push(img.urls.regular);
+				});
+				const newFreshState = [[], [], []];
+				let index = 0;
+				for (let i = 0; i < 3; i++) {
+					for (let j = 0; j < 10; j++) {
+						newFreshState[i].push(imagsRreceived[index]);
+						index++;
+					}
+				}
+
+				setDataImg(newFreshState);
+			});
+	};
+
+	useEffect(() => {
+		searchFetchData();
+	}, [searchState]);
+
 	useEffect(() => {
 		infinitFetchData();
 	}, [pageIndex]);
@@ -61,7 +90,7 @@ export default function InfiniteScroll() {
 		const { scrollTop, scrollHeight, clientHeight } =
 			document.documentElement;
 
-		if (scrollHeight - scrollTop === clientHeight) {
+		if (scrollHeight - scrollTop <= clientHeight) {
 			setPageIndex((pageIndex) => pageIndex + 1);
 		}
 	};
