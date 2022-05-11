@@ -34,6 +34,7 @@ export default function InfiniteScroll() {
 				}
 
 				setDataImg(newFreshState);
+				setFirstCall(false);
 			});
 	};
 
@@ -63,6 +64,9 @@ export default function InfiniteScroll() {
 	};
 
 	useEffect(() => {
+		if (firstCall) {
+			return;
+		}
 		searchFetchData();
 	}, [searchState]);
 
