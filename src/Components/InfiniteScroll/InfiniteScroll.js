@@ -17,21 +17,23 @@ export default function InfiniteScroll() {
 			})
 			.then((data) => {
 				const imagsRreceived = [];
-                data.results.forEach((img) => {
-                    imagsRreceived.push(img.urls.regular)
-                })
-                const newFreshState = [
-                    [...dataImg[0]],
-                    [...dataImg[1]],
-                    [...dataImg[2]],
-                ]
-                let index = 0;
-                for(let i = 0, i < 3 , i++){
-                    for(let j = 0, j < 10 , j++){
-                        newFreshState[i].push(imagsRreceived[index])
-                        index ++
-                    }
-                }
+				data.results.forEach((img) => {
+					imagsRreceived.push(img.urls.regular);
+				});
+				const newFreshState = [
+					[...dataImg[0]],
+					[...dataImg[1]],
+					[...dataImg[2]],
+				];
+				let index = 0;
+				for (let i = 0; i < 3; i++) {
+					for (let j = 0; j < 10; j++) {
+						newFreshState[i].push(imagsRreceived[index]);
+						index++;
+					}
+				}
+
+				setDataImg(newFreshState);
 			});
 	};
 
@@ -57,35 +59,17 @@ export default function InfiniteScroll() {
 			<div className='card-list'>
 				<div>
 					{dataImg[0].map((img) => {
-						return (
-							<img
-								key={uuidv4()}
-								src={img}
-								alt='image unsplash'
-							/>
-						);
+						return <img key={uuidv4()} src={img} alt='unsplash' />;
 					})}
 				</div>
 				<div>
 					{dataImg[1].map((img) => {
-						return (
-							<img
-								key={uuidv4()}
-								src={img}
-								alt='image unsplash'
-							/>
-						);
+						return <img key={uuidv4()} src={img} alt='unsplash' />;
 					})}
 				</div>
 				<div>
 					{dataImg[2].map((img) => {
-						return (
-							<img
-								key={uuidv4()}
-								src={img}
-								alt='image unsplash'
-							/>
-						);
+						return <img key={uuidv4()} src={img} alt='unsplash' />;
 					})}
 				</div>
 			</div>
