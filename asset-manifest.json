@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/https//:julescynamon.github.io/infinite-gallery/static/css/main.fff8c135.chunk.css",
+    "main.js": "/https//:julescynamon.github.io/infinite-gallery/static/js/main.c09ed62c.chunk.js",
+    "main.js.map": "/https//:julescynamon.github.io/infinite-gallery/static/js/main.c09ed62c.chunk.js.map",
+    "runtime-main.js": "/https//:julescynamon.github.io/infinite-gallery/static/js/runtime-main.aac9cec4.js",
+    "runtime-main.js.map": "/https//:julescynamon.github.io/infinite-gallery/static/js/runtime-main.aac9cec4.js.map",
+    "static/js/2.7222271e.chunk.js": "/https//:julescynamon.github.io/infinite-gallery/static/js/2.7222271e.chunk.js",
+    "static/js/2.7222271e.chunk.js.map": "/https//:julescynamon.github.io/infinite-gallery/static/js/2.7222271e.chunk.js.map",
+    "index.html": "/https//:julescynamon.github.io/infinite-gallery/index.html",
+    "static/css/main.fff8c135.chunk.css.map": "/https//:julescynamon.github.io/infinite-gallery/static/css/main.fff8c135.chunk.css.map",
+    "static/js/2.7222271e.chunk.js.LICENSE.txt": "/https//:julescynamon.github.io/infinite-gallery/static/js/2.7222271e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aac9cec4.js",
+    "static/js/2.7222271e.chunk.js",
+    "static/css/main.fff8c135.chunk.css",
+    "static/js/main.c09ed62c.chunk.js"
+  ]
+}
